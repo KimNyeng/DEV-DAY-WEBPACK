@@ -11,7 +11,7 @@ Link: https://webpack.js.org "WEBPACK"
 ##### branch 별로 source code 를 분리 
 
 > 1. start-app
-> 2. what is webpack.
+> 2. what-is-webpack.
 > 3. webpack-dev-server 
 > 4. webpack-core-concepts
 > 5. webpack-babel-scss-basic 
