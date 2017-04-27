@@ -1,7 +1,9 @@
 정보기술연구소 DEV-DAY
 =====================
 
-# WEBPACK2 진행을 위한 source code
+* WEBPACK2 진행을 위한 source code
+
+
 
 branch 별로 source code 를 분리
 ------------------------------
@@ -13,7 +15,7 @@ branch 별로 source code 를 분리
 > 5. webpack-babel-scss-basic 설정
 > 5. webpack-babel-scss-basic 완성
 > 6. webpack-babel-scss-img-html 적용
- 
+
 
 
 
