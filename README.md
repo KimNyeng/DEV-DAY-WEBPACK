@@ -3,10 +3,12 @@
 
 * WEBPACK2 진행을 위한 source code
 
+>webpack urk Link: [webpack][webpacklink]
+[webpacklink]: https://webpack.js.org "WEBPACK"
 
+- - -
 
-branch 별로 source code 를 분리
-------------------------------
+##### branch 별로 source code 를 분리 
 
 > 1. 시작 APP
 > 2. webpack 이란 무엇인가.
