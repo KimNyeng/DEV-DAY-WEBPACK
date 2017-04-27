@@ -3,7 +3,6 @@
 
 * WEBPACK2 진행을 위한 source code
 
->webpack
 Link: [webpack][webpacklink]
 [webpacklink]: https://webpack.js.org "WEBPACK"
 
