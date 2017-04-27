@@ -1,2 +1,2 @@
-export var secretButton = document.querySelector('#secret-button');
-export var secretParagraph = document.querySelector('#secret-paragraph');
+const buttonRndInt = document.querySelector('#randomInt');
+const buttonRndRange = document.querySelector('#randomRange');

@@ -1,27 +1,12 @@
-import { secretParagraph, secretButton } from './dom-loader';
+const outputParagraph = document.querySelector('#outputParagraph');
 
-var showSecret = true;
+const outputRandomInt = () => {
+    outputParagraph.textContent = RandomGenerator.randomInteger();
+};
 
-secretButton.addEventListener('click', toggleSecretState);
+const outputRandomRange = () => {
+    outputParagraph.textContent = RandomGenerator.randomRange(1,500);
+};
 
-function toggleSecretState(){
-    showSecret = !showSecret;
-    updateSecretParagraph();
-    updateSecretButton();
-}
-
-function updateSecretButton(){
-    if(showSecret){ 
-        secretButton.textContent = 'Hide the Secret';
-    }else{
-        secretButton.textContent = 'Show the Secret';
-    }
-}
-
-function updateSecretParagraph(){
-    if(showSecret){
-        secretParagraph.style.display = 'block';
-    }else{
-        secretParagraph.style.display = 'none';
-    }
-}
+buttonRndInt.addEventListener('click',outputRandomInt)
+buttonRndRange.addEventListener('click', outputRandomRange);
