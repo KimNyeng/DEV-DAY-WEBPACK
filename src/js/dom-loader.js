@@ -1,3 +1,3 @@
 var secretButton = document.querySelector("#secret-button");
 var secretParagraph = document.querySelector("#secret-paragraph");
-var secretHelloworld = document.querySelector("#helloworld")
+var secretHelloworld = document.querySelector("#secret-helloworld")
