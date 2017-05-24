@@ -1,4 +1,5 @@
 import { secretButton, secretParagraph, secretHelloworld } from './dom-loader';
+import * as d3  from 'd3';
 
 var showSecret = true;
 
