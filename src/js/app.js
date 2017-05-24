@@ -11,13 +11,12 @@ function toggleSecretState() {
 function updateSecretButton() {
     if (showSecret) {
         secretButton.textContent = '버튼 누르기 전 ~';
-        d3HelloworldRemove(secretHelloworld);
+        d3HelloworldRemove(secretHelloworld, "h2");
     } else {
         secretButton.textContent = '버튼 누른 후 ~';
-
-
-        d3HelloworldRemove(secretHelloworld);
-        d3HelloworldInsert(secretHelloworld, function (select) { 
+        
+        d3HelloworldRemove(secretHelloworld, "h2");
+        d3HelloworldInsert(secretHelloworld, function (select) {
             select.append("h2")
                 .text("Hello, 연구소!")
                 .style("text-align", "center")
@@ -31,8 +30,9 @@ function updateSecretButton() {
 
     }
 }
-function d3HelloworldRemove(select) {
-    d3HelloworldSelect(select).select("h2").remove();
+
+function d3HelloworldRemove(select, attr) {
+    d3HelloworldSelect(select).select(attr).remove();
 }
 
 function d3HelloworldSelect(select) {
@@ -40,8 +40,7 @@ function d3HelloworldSelect(select) {
 }
 
 function d3HelloworldInsert(select, update) {
-    let helloworld = d3HelloworldSelect(select);
-    update(helloworld);
+    update(d3HelloworldSelect(select));
 }
 
 function updateSecretParagraph() {
