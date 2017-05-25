@@ -18,8 +18,7 @@ Link: https://webpack.js.org "WEBPACK"
 > 5. webpack-babel-scss-basic-finished 
 
 * install
-> npm install babel-core babel-loader babel-preset-es2015 --save-dev
-> npm install css-loader sass-loader extract-text-webpack-plugin --save-dev
+> npm install webpack-dev-server --save-dev 
 
 
 
