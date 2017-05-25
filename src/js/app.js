@@ -1,18 +1,57 @@
-import '../css/main.scss';
-import { RandomGenerator } from './random-generator';
- 
-const outputParagraph = document.querySelector('#outputParagraph');
+import '../css/main.css';
+import '../css/input-elements.css';
+import { secretParagraph, secretButton, secretHelloworld } from './dom-loader';
+import * as d3 from 'd3';
 
-const outputRandomInt = () => {
-    outputParagraph.textContent = RandomGenerator.randomInteger();
-};
+var showSecret = true;
 
-const outputRandomRange = () => {
-    outputParagraph.textContent = RandomGenerator.randomRange(1,500);
-};
+secretButton.addEventListener('click', toggleSecretState);
 
-const buttonRndInt = document.querySelector('#randomInt');
-const buttonRndRange = document.querySelector('#randomRange');
+function toggleSecretState() {
+    showSecret = !showSecret;
+    updateSecretParagraph();
+    updateSecretButton();
+}
 
-buttonRndInt.addEventListener('click',outputRandomInt)
-buttonRndRange.addEventListener('click', outputRandomRange);
+function updateSecretButton() {
+    if (showSecret) {
+        secretButton.textContent = '버튼 누르기 전 ~';
+        d3HelloworldRemove(secretHelloworld, "h2");
+    } else {
+        secretButton.textContent = '버튼 누른 후 ~';
+
+        d3HelloworldRemove(secretHelloworld, "h2");
+        d3HelloworldInsert(secretHelloworld, function (select) {
+            select.append("h2")
+                .text("Hello, 연구소!")
+                .style("text-align", "center")
+                .style("line-height", "320px")
+                .style("font-size", "100px")
+                .style("transform", "rotate(-180deg) scale(0.001, 0.001)")
+                .transition()
+                .duration(1500)
+                .style("transform", null);
+        });
+
+    }
+}
+
+function d3HelloworldRemove(select, attr) {
+    d3HelloworldSelect(select).select(attr).remove();
+}
+
+function d3HelloworldSelect(select) {
+    return d3.select(select);
+}
+
+function d3HelloworldInsert(select, update) {
+    update(d3HelloworldSelect(select));
+}
+
+function updateSecretParagraph() {
+    if (showSecret) {
+        secretParagraph.style.display = 'block';
+    } else {
+        secretParagraph.style.display = 'none';
+    }
+}
