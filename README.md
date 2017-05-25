@@ -17,6 +17,10 @@ Link: https://webpack.js.org "WEBPACK"
 > 5. webpack-babel-scss-basic 
 > 5. webpack-babel-scss-basic-finished 
 
+* install
+npm install webpack-dev-server --save-dev
+
+
 
 
 

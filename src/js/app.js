@@ -1,27 +1,55 @@
-import { secretParagraph, secretButton } from './dom-loader';
+import { secretParagraph, secretButton, secretHelloworld } from './dom-loader';
+import * as d3 from 'd3';
 
 var showSecret = true;
 
 secretButton.addEventListener('click', toggleSecretState);
 
-function toggleSecretState(){
+function toggleSecretState() {
     showSecret = !showSecret;
     updateSecretParagraph();
     updateSecretButton();
 }
 
-function updateSecretButton(){
-    if(showSecret){ 
-        secretButton.textContent = 'Hide the Secret';
-    }else{
-        secretButton.textContent = 'Show the Secret';
+function updateSecretButton() {
+    if (showSecret) {
+        secretButton.textContent = '버튼 누르기 전 ~';
+        d3HelloworldRemove(secretHelloworld, "h2");
+    } else {
+        secretButton.textContent = '버튼 누른 후 ~';
+
+        d3HelloworldRemove(secretHelloworld, "h2");
+        d3HelloworldInsert(secretHelloworld, function (select) {
+            select.append("h2")
+                .text("Hello, 연구소!")
+                .style("text-align", "center")
+                .style("line-height", "320px")
+                .style("font-size", "100px")
+                .style("transform", "rotate(-180deg) scale(0.001, 0.001)")
+                .transition()
+                .duration(1500)
+                .style("transform", null);
+        });
+
     }
 }
 
-function updateSecretParagraph(){
-    if(showSecret){
+function d3HelloworldRemove(select, attr) {
+    d3HelloworldSelect(select).select(attr).remove();
+}
+
+function d3HelloworldSelect(select) {
+    return d3.select(select);
+}
+
+function d3HelloworldInsert(select, update) {
+    update(d3HelloworldSelect(select));
+}
+
+function updateSecretParagraph() {
+    if (showSecret) {
         secretParagraph.style.display = 'block';
-    }else{
+    } else {
         secretParagraph.style.display = 'none';
     }
 }
