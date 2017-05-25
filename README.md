@@ -19,6 +19,7 @@ Link: https://webpack.js.org "WEBPACK"
 
 * install
 > npm install babel-core babel-loader babel-preset-es2015 --save-dev
+
 > npm install css-loader sass-loader extract-text-webpack-plugin --save-dev
 
 
